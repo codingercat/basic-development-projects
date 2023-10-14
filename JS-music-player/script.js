@@ -70,4 +70,16 @@ nextBtn.addEventListener("click", nextSong);
 audio.addEventListener("timeupdate", updateProgress);
 progressContainer.addEventListener("click", setProgress);
 
+
+
+//Volume control starts
+const volumeControl = document.getElementById('volume-control');
+//Initial value
+audio.volume = 0.5;
+volumeControl.addEventListener('input', () => {
+    audio.volume = volumeControl.valueAsNumber;
+});
+//Volume control ends
+
 audio.addEventListener("ended", nextSong);
+
